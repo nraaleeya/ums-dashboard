@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMS SMP - Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">UMS <span>SMP</span></div>
+    <nav aria-label="Main menu">
+      <ul class="menu">
+        <li><button class="menu-btn active" data-target="dashboard">Dashboard</button></li>
+        <li><button class="menu-btn" data-target="timetable">My Timetable</button></li>
+        <li><button class="menu-btn" data-target="news">Announcements</button></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+
+  <main class="layout">
+    <div class="content">
+      <section id="dashboard" class="panel">
+        <h1>Welcome back, Ali</h1>
+        <p class="sub">Here is what needs your attention today.</p>
+        <div class="glance" aria-label="At a glance">
+          <article class="card"><h3>Next class</h3><p class="big">Software Architecture</p><p class="small">Monday, 2:00 PM at Bilik Tutorial 3</p></article>
+          <article class="card warn"><h3>Fees outstanding</h3><p class="big">RM 450.00</p><p class="small">Due 30 November 2026</p></article>
+          <article class="card"><h3>Current CGPA</h3><p class="big">3.42</p><p class="small">Semester 2 2025/2026</p></article>
+          <article class="card"><h3>Registered credits</h3><p class="big">18</p><p class="small">6 courses this semester</p></article>
+        </div>
+      </section>
+
+      <section id="timetable" class="panel hidden">
+        <h2>My Timetable</h2>
+        <p id="studentInfo" class="sub">Loading...</p>
+        <div id="timetableList" class="course-list"></div>
+      </section>
+
+      <section id="news" class="panel hidden mobile-news-copy">
+        <h2>Announcements</h2>
+        <p class="sub">Open the Dashboard to see the latest notices in the side panel.</p>
+      </section>
+    </div>
+
+    <aside class="news-col" aria-label="News and announcements">
+      <h2>News</h2>
+      <article class="news-item"><h4>Payment of fees for Semester 1 Session 2026/2027</h4><time>2026-10-31</time><p>Make sure your fee payment is settled before the deadline to avoid being barred from registration.</p></article>
+      <article class="news-item"><h4>Graduation: confirmation of status</h4><time>2026-10-15</time><p>Final-year students can check their graduation status through the portal.</p></article>
+      <article class="news-item"><h4>Update your personal details</h4><time>2026-09-25</time><p>Please verify your name and passport details, especially for international students.</p></article>
+    </aside>
+  </main>
+
+  <footer class="footer"><p>&copy; 2026 Digital UMS - Prototype for KK34703 Lab Test 1</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

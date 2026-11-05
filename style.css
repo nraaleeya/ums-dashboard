@@ -1,0 +1,58 @@
+/* colours live in variables so dark mode only has to swap these */
+:root {
+  --bg: #f3f6fa; --surface: #ffffff; --text: #1c2733; --muted: #5d6b7a;
+  --primary: #0b5cab; --accent: #f2b705; --border: #d9e1ea; --warn: #b3261e;
+}
+body.dark {
+  --bg: #0f1720; --surface: #19232f; --text: #e8eef5; --muted: #9fb0c1;
+  --primary: #5aa7f0; --accent: #f2c94c; --border: #2b3a4a; --warn: #ff8a80;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background .2s, color .2s; }
+h1, h2, h3, h4 { margin: 0 0 .4rem; }
+
+/* flexbox: navigation bar */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .8rem 1.5rem; background: var(--primary); color: #fff; }
+body.dark .topbar { background: #12304f; }
+.brand { font-weight: 700; font-size: 1.3rem; }
+.brand span { color: var(--accent); }
+.menu { display: flex; gap: .4rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.menu-btn, .theme-btn { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: .5rem .9rem; }
+.menu-btn { background: transparent; color: #fff; }
+.menu-btn:hover, .menu-btn.active { background: rgba(255,255,255,.2); }
+.theme-btn { background: var(--accent); color: #1c2733; font-weight: 600; }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* grid: main layout = content + news column */
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; max-width: 1200px; margin: 1.5rem auto; padding: 0 1.5rem; }
+.panel, .news-col { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+.hidden { display: none; }
+.sub { color: var(--muted); margin: 0 0 1.2rem; }
+
+/* overview cards: grid inside, flex for the text inside each card */
+.glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.card { display: flex; flex-direction: column; gap: .3rem; padding: 1rem; border: 1px solid var(--border); border-left: 5px solid var(--primary); border-radius: 8px; background: var(--bg); }
+.card.warn { border-left-color: var(--warn); }
+.card h3 { font-size: .95rem; color: var(--muted); font-weight: 600; }
+.big { font-size: 1.35rem; font-weight: 700; margin: 0; }
+.small { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.course-list { display: flex; flex-direction: column; gap: .8rem; }
+.course { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; flex-wrap: wrap; }
+.course .code { color: var(--primary); font-weight: 700; }
+.course .when { text-align: right; }
+.error { color: var(--warn); font-weight: 600; }
+
+.news-item { padding: .8rem 0; border-bottom: 1px solid var(--border); }
+.news-item:last-child { border-bottom: 0; }
+.news-item h4 { color: var(--primary); }
+.news-item time { font-size: .8rem; color: var(--muted); }
+.news-item p { margin: .3rem 0 0; font-size: .92rem; }
+.footer { text-align: center; padding: 1.2rem; color: var(--muted); font-size: .9rem; }
+
+/* mobile: grid collapses to one column */
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; padding: 0 1rem; }
+  .topbar { padding: .8rem 1rem; }
+  .course .when { text-align: left; }
+}

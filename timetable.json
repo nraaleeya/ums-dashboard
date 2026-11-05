@@ -1,0 +1,8 @@
+{
+  "student": { "name": "Ali Bin Abu", "matric_number": "BI21110000", "program": "Software Engineering" },
+  "courses": [
+    { "code": "KK34703", "title": "Web Engineering", "day": "Monday", "time": "16:00 PM - 18:00 PM", "venue": " Dewan Kuliah Pusat 25" },
+    { "code": "KK34503", "title": "Database Systems", "day": "Tuesday", "time": "10:00 AM - 12:00 PM", "venue": "Dewan Kuliah Pusat 10" },
+    { "code": "KK34103", "title": "Software Architecture", "day": "Monday", "time": "02:00 PM - 04:00 PM", "venue": "Bilik Tutorial 3" }
+  ]
+}
